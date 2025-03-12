@@ -37,21 +37,21 @@
 				<extensions>true</extensions>
 				<configuration>
 		    		<deployment>
-        <uri>https://anypoint.mulesoft.com</uri>
-        <provider>MC</provider>
-        <environment>${env}</environment>
-        <targetId>CloudHub-2.0</targetId>  <!-- Use targetId instead of target -->
-        <muleVersion>${app.runtime}</muleVersion>
-        <username>${anypoint.username}</username>  <!-- Use properties, not env -->
-        <password>${anypoint.password}</password>
-        <applicationName>${project.artifactId}</applicationName>
-        <region>${deployment.region}</region>
-        <workers>${deployment.workers}</workers>
-        <workerType>${deployment.workerType}</workerType>
-        <properties>
-            <http.port>${http.port}</http.port>
-            <mule.env>${env}</mule.env>
-        </properties>
+				        <uri>https://anypoint.mulesoft.com</uri>
+				        <provider>MC</provider>
+				        <environment>${env}</environment>
+				        <targetId>CloudHub-2.0</targetId>  <!-- Use targetId instead of target -->
+				        <muleVersion>${app.runtime}</muleVersion>
+				        <username>${anypoint.username}</username>  <!-- Use properties, not env -->
+				        <password>${anypoint.password}</password>
+				        <applicationName>${project.artifactId}</applicationName>
+				        <region>${deployment.region}</region>
+				        <workers>${deployment.workers}</workers>
+				        <workerType>${deployment.workerType}</workerType>
+				        <properties>
+				            <http.port>${http.port}</http.port>
+				            <mule.env>${env}</mule.env>
+				        </properties>
     </deployment>
     </configuration>
 			</plugin>
