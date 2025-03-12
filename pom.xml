@@ -13,7 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.9.2</app.runtime>
-		<mule.maven.plugin.version>4.5.1</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.8.2</mule.maven.plugin.version>
 	    <env>Dev</env>
 	    <deployment.region>us-east-2</deployment.region>
 	    <deployment.workers>1</deployment.workers>
