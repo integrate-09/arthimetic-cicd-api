@@ -13,7 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.9.2</app.runtime>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.5.1</mule.maven.plugin.version>
 	    <env>Dev</env>
 	    <deployment.region>us-east-2</deployment.region>
 	    <deployment.workers>1</deployment.workers>
@@ -36,23 +36,23 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-		    		 <cloudHub2Deployment>
-    <uri>https://anypoint.mulesoft.com</uri>
-    <provider>MC</provider>
-    <environment>${env}</environment>
-    <target>cloudhub-2</target>
-    <muleVersion>${deployment.app.runtime}</muleVersion>
-    <username>${anypoint.username}</username>
-    <password>${anypoint.password}</password>
-    <applicationName>${project.artifactId}</applicationName>
-    <region>${deployment.region}</region>
-    <workers>${deployment.workers}</workers>
-    <workerType>${deployment.workerType}</workerType>
-    <properties>
-        <http.port>${http.port}</http.port>
-        <mule.env>${env}</mule.env>
-    </properties>
-</cloudHub2Deployment>
+		    		<deployment>
+        <uri>https://anypoint.mulesoft.com</uri>
+        <provider>MC</provider>
+        <environment>${env}</environment>
+        <targetId>CloudHub-2.0</targetId>  <!-- Use targetId instead of target -->
+        <muleVersion>${app.runtime}</muleVersion>
+        <username>${anypoint.username}</username>  <!-- Use properties, not env -->
+        <password>${anypoint.password}</password>
+        <applicationName>${project.artifactId}</applicationName>
+        <region>${deployment.region}</region>
+        <workers>${deployment.workers}</workers>
+        <workerType>${deployment.workerType}</workerType>
+        <properties>
+            <http.port>${http.port}</http.port>
+            <mule.env>${env}</mule.env>
+        </properties>
+    </deployment>
     </configuration>
 			</plugin>
 		</plugins>
