@@ -1,7 +1,7 @@
 http:
   port: "8081"
 log:
-  message: "Welcome to CICD Process"   
+  message: "Welcome to CICD Process via git and jenkins"   
   
 deployment:
   app:
