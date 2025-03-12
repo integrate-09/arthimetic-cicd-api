@@ -8,13 +8,19 @@
 	<packaging>mule-application</packaging>
 
 	<name>arthimetic-cicd-api</name>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.9.2</app.runtime>
 		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+	    <env>Dev</env>
+	    <deployment.region>us-east-2</deployment.region>
+	    <deployment.workers>1</deployment.workers>
+	    <deployment.workerType>MICRO</deployment.workerType>
+	    <http.port>8081</http.port>
+	    <anypoint.username>inte_09</anypoint.username>
+	    <anypoint.password>Mulesoft@09</anypoint.password>
 	</properties>
 
 	<build>
@@ -31,20 +37,22 @@
 				<extensions>true</extensions>
 				<configuration>
 		    		 <cloudHub2Deployment>
-            <uri>https://anypoint.mulesoft.com</uri>
-            <muleVersion>${deployment.app.runtime}</muleVersion>
-            <username>${anypoint.username}</username>
-            <password>${anypoint.password}</password>
-            <applicationName>${project.artifactId}</applicationName>
-            <environment>${env}</environment>
-            <region>${deployment.region}</region>
-            <workers>${deployment.workers}</workers>
-            <workerType>${deployment.workerType}</workerType>
-            <properties>
-                <http.port>${http.port}</http.port>
-                <mule.env>${env}</mule.env>
-            </properties>
-        </cloudHub2Deployment>
+    <uri>https://anypoint.mulesoft.com</uri>
+    <provider>MC</provider>
+    <environment>${env}</environment>
+    <target>cloudhub-2</target>
+    <muleVersion>${deployment.app.runtime}</muleVersion>
+    <username>${anypoint.username}</username>
+    <password>${anypoint.password}</password>
+    <applicationName>${project.artifactId}</applicationName>
+    <region>${deployment.region}</region>
+    <workers>${deployment.workers}</workers>
+    <workerType>${deployment.workerType}</workerType>
+    <properties>
+        <http.port>${http.port}</http.port>
+        <mule.env>${env}</mule.env>
+    </properties>
+</cloudHub2Deployment>
     </configuration>
 			</plugin>
 		</plugins>
