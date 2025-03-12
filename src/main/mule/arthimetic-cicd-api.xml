@@ -11,7 +11,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<configuration-properties doc:name="Configuration properties" doc:id="fb9f6986-4e9f-4512-9f9d-e1832fe65884" file="myConfig-Dev.yaml" />
 	<flow name="arthimetic-cicd-apiFlow" doc:id="41fc9532-082b-4209-9a8a-a1956bf50597" >
 		<http:listener doc:name="Listener" doc:id="fe7d1a86-a1b9-45cc-87ed-e71592dbc9fa" config-ref="HTTP_Listener_config" path="/arthimetic"/>
-		<logger level="INFO" doc:name="Arthimetic Start Log" doc:id="1421e134-bdc2-4610-b95f-4b0dd390e803" message="****Arthimetic Api Invoked *****"/>
+		<logger level="INFO" doc:name="Arthimetic Start Log" doc:id="1421e134-bdc2-4610-b95f-4b0dd390e803" message="*****Arthimetic Api Invoked *****"/>
 		<set-variable value="#[attributes.queryParams.num1 as Number]" doc:name="num1" doc:id="d97c32f8-9eab-43ca-aa2e-43e49ca4c5e3" variableName="num1"/>
 		<set-variable value="#[attributes.queryParams.num2 as Number]" doc:name="num2" doc:id="3a896331-40fc-4eac-8ba6-d4d336319a9e" variableName="num2"/>
 		<ee:transform doc:name="Transform Message" doc:id="b4224292-6c4e-493d-a53e-65c56a5b3942" >
@@ -29,6 +29,6 @@ output application/json
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Arthimetic End Log" doc:id="965e7204-8954-44cc-94c2-1e4bdcf036fb" message="****Arthimetic Api Completed *****"/>
+		<logger level="INFO" doc:name="Arthimetic End Log" doc:id="965e7204-8954-44cc-94c2-1e4bdcf036fb" message="*****Arthimetic Api Completed *****"/>
 	</flow>
 </mule>
